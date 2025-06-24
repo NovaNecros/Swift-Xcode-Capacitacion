@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		E91F8E652E0B1C6200437A66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E91F8E4C2E0B1C6100437A66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E91F8E532E0B1C6100437A66;
+			remoteInfo = "Propinas App";
+		};
+		E91F8E6F2E0B1C6200437A66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E91F8E4C2E0B1C6100437A66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E91F8E532E0B1C6100437A66;
+			remoteInfo = "Propinas App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E91F8E542E0B1C6100437A66 /* Propinas App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Propinas App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91F8E642E0B1C6200437A66 /* Propinas AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Propinas AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91F8E6E2E0B1C6200437A66 /* Propinas AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Propinas AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E91F8E562E0B1C6100437A66 /* Propinas App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Propinas App";
+			sourceTree = "<group>";
+		};
+		E91F8E672E0B1C6200437A66 /* Propinas AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Propinas AppTests";
+			sourceTree = "<group>";
+		};
+		E91F8E712E0B1C6200437A66 /* Propinas AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Propinas AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E91F8E512E0B1C6100437A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E612E0B1C6200437A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E6B2E0B1C6200437A66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E91F8E4B2E0B1C6100437A66 = {
+			isa = PBXGroup;
+			children = (
+				E91F8E562E0B1C6100437A66 /* Propinas App */,
+				E91F8E672E0B1C6200437A66 /* Propinas AppTests */,
+				E91F8E712E0B1C6200437A66 /* Propinas AppUITests */,
+				E91F8E552E0B1C6100437A66 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E91F8E552E0B1C6100437A66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E91F8E542E0B1C6100437A66 /* Propinas App.app */,
+				E91F8E642E0B1C6200437A66 /* Propinas AppTests.xctest */,
+				E91F8E6E2E0B1C6200437A66 /* Propinas AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E91F8E532E0B1C6100437A66 /* Propinas App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E91F8E782E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas App" */;
+			buildPhases = (
+				E91F8E502E0B1C6100437A66 /* Sources */,
+				E91F8E512E0B1C6100437A66 /* Frameworks */,
+				E91F8E522E0B1C6100437A66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E91F8E562E0B1C6100437A66 /* Propinas App */,
+			);
+			name = "Propinas App";
+			packageProductDependencies = (
+			);
+			productName = "Propinas App";
+			productReference = E91F8E542E0B1C6100437A66 /* Propinas App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E91F8E632E0B1C6200437A66 /* Propinas AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E91F8E7B2E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas AppTests" */;
+			buildPhases = (
+				E91F8E602E0B1C6200437A66 /* Sources */,
+				E91F8E612E0B1C6200437A66 /* Frameworks */,
+				E91F8E622E0B1C6200437A66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E91F8E662E0B1C6200437A66 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E91F8E672E0B1C6200437A66 /* Propinas AppTests */,
+			);
+			name = "Propinas AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Propinas AppTests";
+			productReference = E91F8E642E0B1C6200437A66 /* Propinas AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E91F8E6D2E0B1C6200437A66 /* Propinas AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E91F8E7E2E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas AppUITests" */;
+			buildPhases = (
+				E91F8E6A2E0B1C6200437A66 /* Sources */,
+				E91F8E6B2E0B1C6200437A66 /* Frameworks */,
+				E91F8E6C2E0B1C6200437A66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E91F8E702E0B1C6200437A66 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E91F8E712E0B1C6200437A66 /* Propinas AppUITests */,
+			);
+			name = "Propinas AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Propinas AppUITests";
+			productReference = E91F8E6E2E0B1C6200437A66 /* Propinas AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E91F8E4C2E0B1C6100437A66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1610;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					E91F8E532E0B1C6100437A66 = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					E91F8E632E0B1C6200437A66 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E91F8E532E0B1C6100437A66;
+					};
+					E91F8E6D2E0B1C6200437A66 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = E91F8E532E0B1C6100437A66;
+					};
+				};
+			};
+			buildConfigurationList = E91F8E4F2E0B1C6100437A66 /* Build configuration list for PBXProject "Propinas App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E91F8E4B2E0B1C6100437A66;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E91F8E552E0B1C6100437A66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E91F8E532E0B1C6100437A66 /* Propinas App */,
+				E91F8E632E0B1C6200437A66 /* Propinas AppTests */,
+				E91F8E6D2E0B1C6200437A66 /* Propinas AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E91F8E522E0B1C6100437A66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E622E0B1C6200437A66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E6C2E0B1C6200437A66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E91F8E502E0B1C6100437A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E602E0B1C6200437A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E91F8E6A2E0B1C6200437A66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E91F8E662E0B1C6200437A66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E91F8E532E0B1C6100437A66 /* Propinas App */;
+			targetProxy = E91F8E652E0B1C6200437A66 /* PBXContainerItemProxy */;
+		};
+		E91F8E702E0B1C6200437A66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E91F8E532E0B1C6100437A66 /* Propinas App */;
+			targetProxy = E91F8E6F2E0B1C6200437A66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E91F8E762E0B1C6200437A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E91F8E772E0B1C6200437A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E91F8E792E0B1C6200437A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Propinas App/Preview Content\"";
+				DEVELOPMENT_TEAM = 72TX34V293;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E91F8E7A2E0B1C6200437A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Propinas App/Preview Content\"";
+				DEVELOPMENT_TEAM = 72TX34V293;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E91F8E7C2E0B1C6200437A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72TX34V293;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Propinas App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Propinas App";
+			};
+			name = Debug;
+		};
+		E91F8E7D2E0B1C6200437A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72TX34V293;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Propinas App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Propinas App";
+			};
+			name = Release;
+		};
+		E91F8E7F2E0B1C6200437A66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72TX34V293;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Propinas App";
+			};
+			name = Debug;
+		};
+		E91F8E802E0B1C6200437A66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 72TX34V293;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.novanecros.Propinas-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Propinas App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E91F8E4F2E0B1C6100437A66 /* Build configuration list for PBXProject "Propinas App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91F8E762E0B1C6200437A66 /* Debug */,
+				E91F8E772E0B1C6200437A66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E91F8E782E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91F8E792E0B1C6200437A66 /* Debug */,
+				E91F8E7A2E0B1C6200437A66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E91F8E7B2E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91F8E7C2E0B1C6200437A66 /* Debug */,
+				E91F8E7D2E0B1C6200437A66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E91F8E7E2E0B1C6200437A66 /* Build configuration list for PBXNativeTarget "Propinas AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E91F8E7F2E0B1C6200437A66 /* Debug */,
+				E91F8E802E0B1C6200437A66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E91F8E4C2E0B1C6100437A66 /* Project object */;
+}
