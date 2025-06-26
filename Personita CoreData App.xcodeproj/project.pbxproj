@@ -29,9 +29,36 @@
 		E9F484D82E0C84EA00FFD8F8 /* Personita CoreData AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Personita CoreData AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		E9912C9F2E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Personita CoreData App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ModeloEstupido.xcdatamodeld,
+			);
+			target = E9F484BD2E0C84E900FFD8F8 /* Personita CoreData App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		E9912CA02E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Copy Bundle Resources" phase from "Personita CoreData App" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = E9F484BC2E0C84E900FFD8F8 /* Resources */;
+			membershipExceptions = (
+				ModeloEstupido.xcdatamodeld,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		E9F484C02E0C84E900FFD8F8 /* Personita CoreData App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E9912C9F2E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Personita CoreData App" target */,
+				E9912CA02E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Copy Bundle Resources" phase from "Personita CoreData App" target */,
+			);
+			explicitFileTypes = {
+				ModeloEstupido.xcdatamodeld/ModeloEstupido.xcdatamodel = wrapper.xcdatamodel;
+			};
 			path = "Personita CoreData App";
 			sourceTree = "<group>";
 		};
