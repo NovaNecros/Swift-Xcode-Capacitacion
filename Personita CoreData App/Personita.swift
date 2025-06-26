@@ -1,8 +1,8 @@
 import Foundation
 import CoreData
 
-@objc(Persona)
-public class Persona : NSManagedObject
+@objc(Personita)
+public class Personita : NSManagedObject
 {
     public override func awakeFromInsert()
     {
@@ -11,11 +11,11 @@ public class Persona : NSManagedObject
     }
 }
 
-extension Persona
+extension Personita
 {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Persona>
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Personita>
     {
-        NSFetchRequest<Persona>(entityName: "Persona")
+        NSFetchRequest<Personita>(entityName: "Personita")
     }
     
     @NSManaged public var id : UUID?
@@ -23,4 +23,4 @@ extension Persona
     @NSManaged public var cum : Date?
 }
 
-extension Persona : Identifiable { }
+extension Personita : Identifiable { }

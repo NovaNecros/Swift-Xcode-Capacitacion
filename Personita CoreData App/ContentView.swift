@@ -5,24 +5,24 @@ struct ContentView : View
     let coreDM = CoreDataManager()
     
     @State private var nombre : String = ""
-    @State private var cumNullable : Date? = nil
+    @State private var cumReal : Date? = nil
     
-    private var cum : Date = Date()
+    private var cumFalso : Date = Date()
     private var cumBinding : Binding<Date>
     {
         Binding<Date>(
-            get: { cumNullable ?? cum },
-            set: { fecha in cumNullable = fecha }
+            get: { cumReal ?? cumFalso },
+            set: { fecha in cumReal = fecha }
         )
     }
     
-    func algunDato() -> Bool
+    private func algunDato() -> Bool
     {
-        return !nombre.isEmpty || cumNullable != nil
+        return !nombre.isEmpty || cumReal != nil
     }
-    func todoDato() -> Bool
+    private func todoDato() -> Bool
     {
-        return !nombre.isEmpty && cumNullable != nil
+        return !nombre.isEmpty && cumReal != nil
     }
     
     var body : some View
@@ -39,7 +39,7 @@ struct ContentView : View
                     {
                         Image(systemName: "person.fill")
                             .font(.system(size: 28))
-                            .foregroundColor(.pink)
+                            .foregroundColor(Color.pink)
                             .padding(.trailing, 15)
                         
                         Text("Nombre")
@@ -60,7 +60,7 @@ struct ContentView : View
                     {
                         Image(systemName: "calendar")
                             .font(.system(size: 28))
-                            .foregroundColor(.pink)
+                            .foregroundColor(Color.pink)
                             .padding(.trailing, 10)
                         
                         Text("Cumpleaños")
@@ -75,7 +75,8 @@ struct ContentView : View
                     )
                     .datePickerStyle(WheelDatePickerStyle())
                     .labelsHidden()
-                    .padding(.leading, 20)
+                    .frame(alignment: .center)
+                    .padding()
                 }
                 .padding(.horizontal, 10)
                 
@@ -87,12 +88,9 @@ struct ContentView : View
                     {
                         withAnimation(.spring())
                         {
-                            if(todoDato())
-                            {
-                                coreDM.guardar(nombre: nombre, cum: cum)
-                                nombre = ""
-                                cumNullable = nil
-                            }
+                            coreDM.guardar(nombre: nombre, cum: cumReal!)
+                            nombre = ""
+                            cumReal = nil
                         }
                     })
                     {
@@ -114,7 +112,7 @@ struct ContentView : View
                         withAnimation(.spring())
                         {
                             nombre = ""
-                            cumNullable = nil
+                            cumReal = nil
                         }
                     })
                     {

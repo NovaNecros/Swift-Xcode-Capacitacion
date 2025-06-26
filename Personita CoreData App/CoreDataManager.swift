@@ -7,7 +7,7 @@ class CoreDataManager
     
     init()
     {
-        container = NSPersistentContainer(name: "ModeloEstupido")
+        container = NSPersistentContainer(name: "PersonitaModel")
         container.loadPersistentStores
         { (description, error) in
             if let error = error
@@ -20,8 +20,8 @@ class CoreDataManager
     func guardar(nombre : String, cum : Date)
     {
         let ctx : NSManagedObjectContext = container.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Persona", in: ctx)!
-        let personita = Persona(entity: entity, insertInto: ctx)
+        let entity = NSEntityDescription.entity(forEntityName: "Personita", in: ctx)!
+        let personita = Personita(entity: entity, insertInto: ctx)
         
         personita.nombre = nombre
         personita.cum = cum
@@ -37,9 +37,9 @@ class CoreDataManager
         }
     }
     
-    func leerTodas() -> [Persona]
+    func leerTodas() -> [Personita]
     {
-        let cursor : NSFetchRequest<Persona> = Persona.fetchRequest()
+        let cursor : NSFetchRequest<Personita> = Personita.fetchRequest()
         
         do
         {

@@ -1,57 +1,103 @@
 import SwiftUI
+import CoreData
 
 struct Listado : View
 {
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
+    
+    @State private var selected : Personita?
+    
     let coreDM = CoreDataManager()
-    let personitas : [Persona]
+    let personitas : [Personita]
     
     init()
     {
         personitas = coreDM.leerTodas()
     }
     
-    @Environment(\.dismiss) private var dismiss
-    
     var body : some View
     {
         VStack(alignment: .center, spacing: 0)
         {
-            ScrollView()
+            List()
             {
-                LazyVStack(alignment: .leading, spacing: 20)
+                Section(header:
+                    HStack()
+                    {
+                        Text("Nombre")
+                        .frame(minWidth: 100, alignment: .center)
+                    
+                    Text("ID").frame(width: 80, alignment: .center)
+                    
+                    Spacer()
+                    
+                    Text("Cumpleaños")
+                        .frame(alignment: .center)
+                    }
+                )
                 {
-                    ForEach(0..<personitas.count)
-                    { i in
-                        Text("\(personitas[i].nombre ?? ":(")")
-                            .font(.headline)
-                            .background(RoundedRectangle(cornerRadius: 8)
-                                .fill(Color.gray.opacity(0.1)))
-                            .padding()
+                    ForEach(personitas)
+                    { (p : Personita) in
+                        PersonitaRow(personita: p, isSelected: p == selected)
+                            .contentShape(Rectangle())
+                            .onTapGesture
+                            {
+                                selected = p
+                            }
                     }
                 }
-                .padding()
+                .listStyle(.insetGrouped)
             }
             
             Spacer()
             
-            Button(action:
+            HStack(alignment: .center, spacing: 15)
             {
-                withAnimation(.spring())
+                Button(action:
                 {
-                    dismiss()
+                    withAnimation(.spring())
+                    {
+                        dismiss()
+                    }
+                })
+                {
+                    Image(systemName: "arrow.clockwise.circle.fill")
+                        .font(.system(size: 80))
+                        .rotationEffect(.init(degrees: 45))
+                        .foregroundColor(Color.blue.opacity(0.85))
                 }
-            })
-            {
-                Image(systemName: "arrow.clockwise.circle.fill")
-                    .font(.system(size: 100))
-                    .rotationEffect(.init(degrees: 45))
-                    .foregroundColor(Color.blue.opacity(0.85))
+                .buttonStyle(PlainButtonStyle())
+                
+                Button(
+                    role: .destructive,
+                    action: borrar
+                )
+                {
+                    Image(systemName: "trash.square.fill")
+                        .font(.system(size: 80))
+                        .foregroundColor(selected != nil ? Color.red : Color.red.opacity(0.4))
+                }
+                .buttonStyle(ConditionalButtonStyle(isEnabled: selected != nil))
             }
-            .buttonStyle(PlainButtonStyle())
-            .padding(.bottom, 20)
         }
         .navigationBarBackButtonHidden(true)
         .padding()
+    }
+    
+    private func borrar()
+    {
+        guard let persona = selected else { return }
+        viewContext.delete(persona)
+        do
+        {
+            try viewContext.save()
+            selected = nil
+        }
+        catch
+        {
+            print("Error borrando \n \(error)")
+        }
     }
 }
 

@@ -33,7 +33,7 @@
 		E9912C9F2E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Personita CoreData App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				ModeloEstupido.xcdatamodeld,
+				PersonitaModel.xcdatamodeld,
 			);
 			target = E9F484BD2E0C84E900FFD8F8 /* Personita CoreData App */;
 		};
@@ -44,7 +44,7 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = E9F484BC2E0C84E900FFD8F8 /* Resources */;
 			membershipExceptions = (
-				ModeloEstupido.xcdatamodeld,
+				PersonitaModel.xcdatamodeld,
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -57,7 +57,7 @@
 				E9912CA02E0DE581002F3890 /* Exceptions for "Personita CoreData App" folder in "Copy Bundle Resources" phase from "Personita CoreData App" target */,
 			);
 			explicitFileTypes = {
-				ModeloEstupido.xcdatamodeld/ModeloEstupido.xcdatamodel = wrapper.xcdatamodel;
+				PersonitaModel.xcdatamodeld/PersonitaModel.xcdatamodel = wrapper.xcdatamodel;
 			};
 			path = "Personita CoreData App";
 			sourceTree = "<group>";

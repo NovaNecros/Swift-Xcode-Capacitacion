@@ -9,5 +9,6 @@ struct ConditionalButtonStyle : ButtonStyle
         configuration.label
             .opacity(configuration.isPressed && isEnabled ? 0.4 : 1)
             .animation(.default, value: configuration.isPressed)
+            .disabled(!isEnabled)
     }
 }
