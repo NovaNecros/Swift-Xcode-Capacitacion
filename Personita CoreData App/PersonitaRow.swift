@@ -21,7 +21,7 @@ struct PersonitaRow : View
     {
         Date.FormatStyle()
             .year(.defaultDigits)
-            .month(.wide)
+            .month(.abbreviated)
             .day(.twoDigits)
     }
     
@@ -32,29 +32,35 @@ struct PersonitaRow : View
             Text(personita.nombre ?? ":(")
                 .font(.system(size: 14))
                 .bold()
-                .frame(minWidth: 100, alignment: .leading)
+                .frame(width: 80)
+                .multilineTextAlignment(.leading)
             
             Text(personita.id?.uuidString.prefix(8) ?? "-")
                 .font(.caption.monospaced())
                 .foregroundColor(Color.secondary)
-                .frame(width: 80, alignment: .leading)
+                .frame(width: 80)
+                .multilineTextAlignment(.center)
             
             Spacer()
             
             if let cum = personita.cum
             {
                 Text(cum, format: fechFormatter)
-                    .font(.subheadline)
+                    .font(.system(size: 12))
                     .foregroundColor(Color.black)
+                    .frame(width: 120)
+                    .multilineTextAlignment(.trailing)
             }
             else
             {
                 Text("No nació")
-                    .font(.subheadline)
+                    .font(.system(size: 12))
                     .foregroundColor(Color.red)
+                    .frame(width: 120)
+                    .multilineTextAlignment(.trailing)
             }
         }
-        .background(isSelected ? Color.blue.opacity(0.2) : Color.clear)
+        .background(isSelected ? Color.yellow.opacity(0.2) : Color.clear)
         .padding(.vertical, 8)
     }
 }

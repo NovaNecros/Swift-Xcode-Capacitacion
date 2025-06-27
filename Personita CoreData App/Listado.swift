@@ -3,18 +3,14 @@ import CoreData
 
 struct Listado : View
 {
+    @StateObject private var coreDM = CoreDataManager()
+    @State private var personitas : [Personita] = []
+    @State private var selected : Personita? = nil
+    @State private var key : String = ""
+    @State private var order : Bool = true
+    
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
-    
-    @State private var selected : Personita?
-    
-    let coreDM = CoreDataManager()
-    let personitas : [Personita]
-    
-    init()
-    {
-        personitas = coreDM.leerTodas()
-    }
     
     var body : some View
     {
@@ -22,37 +18,34 @@ struct Listado : View
         {
             List()
             {
-                Section(header:
-                    HStack()
-                    {
-                        Text("Nombre")
-                        .frame(minWidth: 100, alignment: .center)
-                    
-                    Text("ID").frame(width: 80, alignment: .center)
-                    
-                    Spacer()
-                    
-                    Text("Cumpleaños")
-                        .frame(alignment: .center)
-                    }
-                )
+                Section(header: header)
                 {
                     ForEach(personitas)
                     { (p : Personita) in
                         PersonitaRow(personita: p, isSelected: p == selected)
                             .contentShape(Rectangle())
-                            .onTapGesture
+                            .onTapGesture()
                             {
-                                selected = p
+                                withAnimation(.spring())
+                                {
+                                    selected = p                                    
+                                }
                             }
                     }
                 }
                 .listStyle(.insetGrouped)
+                .onAppear()
+                {
+                    withAnimation(.spring())
+                    {
+                        personitas = coreDM.leer()
+                    }
+                }
             }
             
             Spacer()
             
-            HStack(alignment: .center, spacing: 15)
+            HStack(alignment: .center, spacing: 30)
             {
                 Button(action:
                 {
@@ -85,18 +78,86 @@ struct Listado : View
         .padding()
     }
     
+    private var header : some View
+    {
+        HStack()
+        {
+            Text("Nombre")
+                .frame(width: 80)
+                .multilineTextAlignment(.leading)
+                .onTapGesture()
+                {
+                    withAnimation(.spring())
+                    {
+                        if key == "nombre"
+                        {
+                            order.toggle()
+                        }
+                        else
+                        {
+                            key = "nombre"
+                            order = true
+                        }
+                        
+                        personitas = coreDM.leer(key: key, order: order)
+                    }
+                }
+        
+            Text("ID")
+                .frame(width: 80)
+                .multilineTextAlignment(.center)
+                .onTapGesture()
+                {
+                    withAnimation(.spring())
+                    {
+                        if key == "id"
+                        {
+                            order.toggle()
+                        }
+                        else
+                        {
+                            key = "id"
+                            order = true
+                        }
+                        
+                        personitas = coreDM.leer(key: key, order: order)
+                    }
+                }
+        
+        Spacer()
+        
+            Text("Cumpleaños")
+                .frame(width: 120)
+                .multilineTextAlignment(.trailing)
+                .onTapGesture()
+                {
+                    withAnimation(.spring())
+                    {
+                        if key == "cum"
+                        {
+                            order.toggle()
+                        }
+                        else
+                        {
+                            key = "cum"
+                            order = true
+                        }
+                        
+                        personitas = coreDM.leer(key: key, order: order)
+                    }
+                }
+        }
+    }
+    
     private func borrar()
     {
         guard let persona = selected else { return }
-        viewContext.delete(persona)
-        do
+        
+        withAnimation(.spring())
         {
-            try viewContext.save()
+            coreDM.borrar(persona)
+            personitas = coreDM.leer(key: key, order: order)
             selected = nil
-        }
-        catch
-        {
-            print("Error borrando \n \(error)")
         }
     }
 }

@@ -3,7 +3,13 @@ import CoreData
 
 class CoreDataManager
 {
+    let columns : [String] = ["id", "nombre", "cum"]
+    
     let container : NSPersistentContainer
+    var viewContext : NSManagedObjectContext
+    {
+        container.viewContext
+    }
     
     init()
     {
@@ -29,25 +35,68 @@ class CoreDataManager
         do
         {
             try container.viewContext.save()
-            print(":)")
         }
         catch
         {
-            print(":(")
+            print("Error al guardar \n \(error.localizedDescription)")
         }
     }
     
-    func leerTodas() -> [Personita]
+    func borrar(_ personita : Personita)
     {
-        let cursor : NSFetchRequest<Personita> = Personita.fetchRequest()
+        viewContext.delete(personita)
+        saveContext()
+    }
+    
+    func leer() -> [Personita]
+    {
+        leer(key: nil)
+    }
+    
+    func leer(key : String?) -> [Personita]
+    {
+        leer(key: key, order: true)
+    }
+    
+    func leer(key : String?, order : Bool) -> [Personita]
+    {
+        let request : NSFetchRequest<Personita> = Personita.fetchRequest()
+        var realKey : String? = nil
+        
+        for column in columns
+        {
+            if key == column
+            {
+                realKey = column
+                break
+            }
+        }
+        
+        request.sortDescriptors = [NSSortDescriptor(key: realKey ?? "nombre", ascending: order)]
         
         do
         {
-            return try container.viewContext.fetch(cursor)
+            return try viewContext.fetch(request)
         }
         catch
         {
+            print("Error al leer\n \(error.localizedDescription)")
             return []
         }
     }
+    
+    private func saveContext()
+    {
+        guard viewContext.hasChanges else { return }
+        do
+        {
+            try viewContext.save()
+        }
+        catch
+        {
+            print("Error al actualizar contexto\n \(error.localizedDescription)")
+        }
+    }
 }
+
+extension CoreDataManager : ObservableObject { }
