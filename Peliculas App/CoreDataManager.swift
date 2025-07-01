@@ -32,14 +32,17 @@ class CoreDataManager
         self.columns = Array(entity.attributesByName.keys)
     }
     
-    func guardar(titulo : String, director : String, duracion : Int, rating : Int)
+    func guardar(titulo : String, director : String, genero : String, clasificacion : String, duracion : Double, estreno : Date, rating : Int)
     {
         let entity = NSEntityDescription.entity(forEntityName: "Pelicula", in: viewContext)!
         let peli = Pelicula(entity: entity, insertInto: viewContext)
         
         peli.titulo = titulo
         peli.director = director
+        peli.genero = genero
+        peli.clasificacion = clasificacion
         peli.duracion = Int16(duracion)
+        peli.estreno = estreno
         peli.rating = Int16(rating)
         
         do
@@ -90,7 +93,7 @@ class CoreDataManager
         }
         catch
         {
-            print("Error al leer\n \(error.localizedDescription)")
+            print(":( \n \(error.localizedDescription)")
             return []
         }
     }
@@ -104,9 +107,7 @@ class CoreDataManager
         }
         catch
         {
-            print("Error al actualizar contexto\n \(error.localizedDescription)")
+            print(":( \n \(error.localizedDescription)")
         }
     }
 }
-
-extension CoreDataManager : ObservableObject { }

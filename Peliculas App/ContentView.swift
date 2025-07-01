@@ -3,17 +3,42 @@ import SwiftUI
 struct ContentView : View
 {
     let cdm = CoreDataManager()
+    let generos : [String] = ["Acción", "Comedia", "Ciencia Ficción", "Fantasía", "Romance", "Terror"]
+    let clasificaciones : [String] = ["AA", "A", "B", "B15", "C"]
     
     @State private var titulo : String
     @State private var director : String
-    @State private var duracion : String
+    @State private var genero : String
+    @State private var clasificacion : String
+    @State private var duracion : Double
+    @State private var estrenoReal : Date?
     @State private var rating : Int
+    
+    private var estrenoFalso : Date = Date()
+    private var estrenoBinding : Binding<Date>
+    {
+        Binding<Date>(
+            get: { estrenoReal ?? estrenoFalso },
+            set: { fecha in estrenoReal = fecha }
+        )
+    }
+    
+    private var fechaFormatter : Date.FormatStyle
+    {
+        Date.FormatStyle()
+            .year(.defaultDigits)
+            .month(.abbreviated)
+            .day(.twoDigits)
+    }
     
     init()
     {
         self.titulo = ""
         self.director = ""
-        self.duracion = ""
+        self.genero = ""
+        self.clasificacion = ""
+        self.duracion = 0.0
+        self.estrenoReal = nil
         self.rating = -1
     }
     
@@ -21,7 +46,10 @@ struct ContentView : View
     {
         self.titulo = peli.titulo ?? ""
         self.director = peli.director ?? ""
-        self.duracion = String(peli.duracion)
+        self.genero = peli.genero ?? ""
+        self.clasificacion = peli.clasificacion ?? ""
+        self.duracion = Double(peli.duracion)
+        self.estrenoReal = peli.estreno
         self.rating = Int(peli.rating)
     }
     
@@ -36,31 +64,72 @@ struct ContentView : View
                 
                 Spacer()
                 
-                VStack(alignment: .center, spacing: 32)
+                VStack(alignment: .center, spacing: 24)
                 {
                     TextField("Nombre de la película", text: $titulo)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocorrectionDisabled(true)
                         .multilineTextAlignment(.leading)
-                        .padding(.horizontal, 24)
                     
                     TextField("Director", text: $director)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocorrectionDisabled(true)
                         .multilineTextAlignment(.leading)
-                        .padding(.horizontal, 24)
                     
-                    TextField("Duración (minutos)", text: $duracion)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.numberPad)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal, 24)
+                    Picker(
+                        selection: $genero,
+                        label: Text("Género")
+                    )
+                    {
+                        ForEach(generos, id: \.self)
+                        { g in
+                            Text("\(g)")
+                        }
+                    }
+                    .pickerStyle(PalettePickerStyle())
+                    
+                    Picker(
+                        selection: $clasificacion,
+                        label: Text("Clasificación")
+                    )
+                    {
+                        ForEach(clasificaciones, id: \.self)
+                        { c in
+                            Text("\(c)")
+                        }
+                    }
+                    .pickerStyle(PalettePickerStyle())
+                    .padding(.vertical, 16)
+                    
+                    Text("Duración: \(duracion, specifier: "%.0f") minutos")
+                        .font(.system(size: 18))
+                    
+                    Slider(
+                        value: $duracion,
+                        in: 0...300,
+                        step: 1
+                    )
+                    .padding(.horizontal, 16)
+                    
+                    HStack(alignment: .center, spacing: 0)
+                    {
+                        Text("Fecha de estreno:")
+                            .font(.system(size: 18))
+                            .multilineTextAlignment(.leading)
+                        
+                        DatePicker(
+                            "",
+                            selection: estrenoBinding,
+                            displayedComponents: .date
+                        )
+                        .datePickerStyle(CompactDatePickerStyle())
+                            
+                    }
                     
                     StarRatingView(rating: $rating, size: 32, spacing: 8)
-                        .padding(.horizontal,24)
                         .padding(.top)
                 }
-                .padding(.horizontal)
+                .padding(.horizontal, 16)
                 
                 Spacer()
                 
@@ -72,7 +141,7 @@ struct ContentView : View
                         {
                             withAnimation(.spring())
                             {
-                                cdm.guardar(titulo: titulo, director: director, duracion: Int(duracion) ?? 0, rating: rating)
+                                cdm.guardar(titulo: titulo, director: director, genero: genero, clasificacion: clasificacion, duracion: duracion, estreno: estrenoReal!, rating: rating)
                                 
                                 limpiarDatos()
                             }
@@ -135,18 +204,33 @@ struct ContentView : View
     {
         self.titulo = ""
         self.director = ""
-        self.duracion = ""
+        self.genero = ""
+        self.clasificacion = ""
+        self.duracion = 0.0
+        self.estrenoReal = nil
         self.rating = -1
     }
     
     func algunDato() -> Bool
     {
-        return !titulo.isEmpty || !director.isEmpty || !duracion.isEmpty || rating > 0
+        return !titulo.isEmpty ||
+        !director.isEmpty ||
+        !genero.isEmpty ||
+        !clasificacion.isEmpty ||
+        duracion > 0 ||
+        estrenoReal != nil ||
+        rating > 0
     }
     
     func todoDato() -> Bool
     {
-        return !titulo.isEmpty && !director.isEmpty && !duracion.isEmpty && rating > 0
+        return !titulo.isEmpty &&
+        !director.isEmpty &&
+        !genero.isEmpty &&
+        !clasificacion.isEmpty &&
+        duracion > 0 &&
+        estrenoReal != nil &&
+        rating > 0
     }
 }
 

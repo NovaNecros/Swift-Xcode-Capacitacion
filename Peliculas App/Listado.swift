@@ -109,9 +109,17 @@ struct Listado : View
     {
         HStack()
         {
-            Text("ID")
-                .frame(width: 40)
+            Text("Nombre")
+                .frame(width: 120)
                 .multilineTextAlignment(.leading)
+                .onTapGesture()
+                {
+                    reorder(key: "nombre")
+                }
+            
+            Text("ID")
+                .frame(width: 100)
+                .multilineTextAlignment(.center)
                 .onTapGesture()
                 {
                     withAnimation(.spring())
@@ -130,32 +138,9 @@ struct Listado : View
                     }
                 }
             
-            Text("Nombre")
-                .frame(width: 80)
-                .multilineTextAlignment(.leading)
-                .onTapGesture()
-                {
-                    reorder(key: "nombre")
-                }
-        
-            Text("Director")
-                .frame(width: 80)
-                .multilineTextAlignment(.leading)
-                .onTapGesture()
-                {
-                    reorder(key: "director")
-                }
-            
-            Text("Duracion")
-                .frame(width: 70)
-                .multilineTextAlignment(.trailing)
-                .onTapGesture()
-                {
-                    reorder(key: "duracion")
-                }
+            Spacer()
             
             Text("Rating")
-                .frame(width: 80)
                 .multilineTextAlignment(.trailing)
                 .onTapGesture()
                 {

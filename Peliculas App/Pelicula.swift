@@ -21,7 +21,10 @@ extension Pelicula
     @NSManaged public var id : UUID?
     @NSManaged public var titulo : String?
     @NSManaged public var director : String?
+    @NSManaged public var genero : String?
+    @NSManaged public var clasificacion : String?
     @NSManaged public var duracion : Int16
+    @NSManaged public var estreno : Date?
     @NSManaged public var rating : Int16
 }
 
